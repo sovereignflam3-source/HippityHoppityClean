@@ -29,23 +29,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Open mailto with form data when the contact form is submitted.
   form.addEventListener("submit", function (event) {
     event.preventDefault();
-    const name = document.querySelector("#name").value || "";
-    const phone = document.querySelector("#phone").value || "";
-    const email = document.querySelector("#email").value || "";
-    const service = document.querySelector("#service").value || "";
-    const message = document.querySelector("#message").value || "";
-
-    const subject = encodeURIComponent("Website Cleaning Request - Hippity Hoppity");
-    const body = encodeURIComponent(
-      `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService Needed: ${service}\n\nMessage:\n${message}`
-    );
-
-    const mailtoLink = `mailto:hippityhoppitycleaningservice@gmail.com?subject=${subject}&body=${body}`;
-    console.log("Opening contact email:", mailtoLink);
-    window.location.href = mailtoLink;
+    const status = document.querySelector("#contactStatus");
+    if (status) {
+      status.textContent = "Online submission is coming soon. Please contact us directly by email.";
+    }
   });
 
   if (reviewForm) {
@@ -59,23 +48,10 @@ document.addEventListener("DOMContentLoaded", function () {
   if (careersForm) {
     careersForm.addEventListener("submit", function (event) {
       event.preventDefault();
-      const fullName = careersForm.querySelector("#fullName").value || "";
-      const phone = careersForm.querySelector("#phone").value || "";
-      const email = careersForm.querySelector("#email").value || "";
-      const city = careersForm.querySelector("#city").value || "";
-      const availability = careersForm.querySelector("#availability").value || "";
-      const experience = careersForm.querySelector("#experience").value || "";
-      const transportation = careersForm.querySelector("#transportation").value || "";
-      const message = careersForm.querySelector("#careerMessage").value || "";
-
-      const subject = encodeURIComponent("Job Application - Hippity Hoppity");
-      const body = encodeURIComponent(
-        `Full Name: ${fullName}\nPhone: ${phone}\nEmail: ${email}\nCity / Area: ${city}\nAvailability: ${availability}\nCleaning Experience:\n${experience}\nReliable Transportation: ${transportation}\n\nMessage:\n${message}`
-      );
-
-      const mailtoLink = `mailto:hippityhoppitycleaningservice@gmail.com?subject=${subject}&body=${body}`;
-      console.log("Opening careers email:", mailtoLink);
-      window.location.href = mailtoLink;
+      const status = document.querySelector("#careersStatus");
+      if (status) {
+        status.textContent = "Online submission is coming soon. Please contact us directly by email.";
+      }
     });
   }
 
