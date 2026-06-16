@@ -58,24 +58,70 @@ document.addEventListener("DOMContentLoaded", function () {
   if (careersForm) {
     careersForm.addEventListener("submit", function (event) {
       event.preventDefault();
-      const fullName = document.querySelector("#fullName").value || "";
-      const phone = document.querySelector("#phone").value || "";
-      const email = document.querySelector("#email").value || "";
-      const city = document.querySelector("#city").value || "";
-      const availability = document.querySelector("#availability").value || "";
-      const experience = document.querySelector("#experience").value || "";
-      const transportation = document.querySelector("#transportation").value || "";
-      const message = document.querySelector("#message").value || "";
-      
+      const fullName = careersForm.querySelector("#fullName").value || "";
+      const phone = careersForm.querySelector("#phone").value || "";
+      const email = careersForm.querySelector("#email").value || "";
+      const city = careersForm.querySelector("#city").value || "";
+      const availability = careersForm.querySelector("#availability").value || "";
+      const experience = careersForm.querySelector("#experience").value || "";
+      const transportation = careersForm.querySelector("#transportation").value || "";
+      const message = careersForm.querySelector("#careerMessage").value || "";
+
       const subject = encodeURIComponent("Job Application - Hippity Hoppity Cleaning Service");
       const body = encodeURIComponent(
         `Full Name: ${fullName}\nPhone: ${phone}\nEmail: ${email}\nCity/Area: ${city}\nAvailability: ${availability}\nReliable Transportation: ${transportation}\n\nCleaning Experience:\n${experience}\n\nAdditional Message:\n${message}`
       );
-      
+
       window.location.href = `mailto:hippityhoppitycleaningservice@gmail.com?subject=${subject}&body=${body}`;
       careersForm.reset();
     });
   }
+
+  const modalTrigger = document.querySelector(".footer-credit-trigger");
+  const modalOverlay = document.querySelector("#siteCreditModal");
+  const modalCard = modalOverlay?.querySelector(".modal-card");
+  const modalClose = modalOverlay?.querySelector(".modal-close");
+
+  function openModal() {
+    if (!modalOverlay) return;
+    modalOverlay.classList.add("active");
+    modalOverlay.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    if (!modalOverlay) return;
+    modalOverlay.classList.remove("active");
+    modalOverlay.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  if (modalTrigger) {
+    modalTrigger.addEventListener("click", openModal);
+    modalTrigger.addEventListener("keypress", function (event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openModal();
+      }
+    });
+  }
+
+  if (modalClose) {
+    modalClose.addEventListener("click", closeModal);
+  }
+
+  if (modalOverlay) {
+    modalOverlay.addEventListener("click", closeModal);
+    modalCard?.addEventListener("click", function (event) {
+      event.stopPropagation();
+    });
+  }
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && modalOverlay?.classList.contains("active")) {
+      closeModal();
+    }
+  });
 
   // IntersectionObserver to reveal sections on scroll.
   const revealSections = document.querySelectorAll(".reveal-section");

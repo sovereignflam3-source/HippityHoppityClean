@@ -316,8 +316,8 @@
             </select>
           </div>
           <div class="form-row">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" placeholder="Anything else you'd like us to know?"></textarea>
+            <label for="careerMessage">Message</label>
+            <textarea id="careerMessage" name="message" rows="4" placeholder="Anything else you'd like us to know?"></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Submit Application</button>
         </form>
@@ -385,11 +385,32 @@
           <p><strong>Email:</strong> <a href="mailto:hippityhoppitycleaningservice@gmail.com">hippityhoppitycleaningservice@gmail.com</a></p>
         </div>
         <div class="footer-section">
-          <p class="footer-credit">Website by <a href="#">SovereignFlame LLC</a></p>
+          <p class="footer-credit"><button type="button" class="footer-credit-trigger">Website by SovereignFlame LLC</button></p>
         </div>
       </div>
     </div>
   </footer>
+
+  <div class="modal-overlay" id="siteCreditModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button type="button" class="modal-close" aria-label="Close details">×</button>
+      <div class="modal-card-inner">
+        <p class="modal-overline">Saeva Venia</p>
+        <h3 id="modalTitle">Founder & Developer</h3>
+        <p class="modal-company">SovereignFlame LLC</p>
+        <div class="modal-services">
+          <p class="modal-subtitle">Services</p>
+          <ul>
+            <li>Custom Websites</li>
+            <li>Business Automation</li>
+            <li>Quote Systems</li>
+            <li>AI Solutions</li>
+          </ul>
+        </div>
+        <p class="modal-contact">Contact: <a href="mailto:SovereignFlam3@gmail.com">SovereignFlam3@gmail.com</a></p>
+      </div>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
