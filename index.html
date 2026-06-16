@@ -27,6 +27,8 @@
         <a href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -151,6 +153,91 @@
       </div>
     </section>
 
+    <section id="reviews" class="reviews section-block reveal-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Client Feedback</p>
+          <h2>What happy customers are saying</h2>
+          <p class="section-intro">Client reviews coming soon. In the meantime, here are a few notes from our early service visits.</p>
+        </div>
+
+        <div class="review-grid">
+          <article class="review-card">
+            <p class="review-text">“The team arrived on time, worked carefully, and the place looked refreshed. We felt relaxed as soon as we walked in.”</p>
+            <p class="review-author">— Jamie, Gainesville</p>
+          </article>
+          <article class="review-card">
+            <p class="review-text">“Hippity Hoppity cleaned our rental quickly and left it guest-ready. Great care for the details and easy communication.”</p>
+            <p class="review-author">— Taylor, Palm Coast</p>
+          </article>
+          <article class="review-card">
+            <p class="review-text">“Friendly, professional, and exactly what we needed before our move. Our new home felt welcoming right away.”</p>
+            <p class="review-author">— Morgan, St. Augustine</p>
+          </article>
+        </div>
+
+        <div class="review-wrapper">
+          <div class="review-form-panel">
+            <h3>Leave a Review</h3>
+            <form id="reviewForm" class="review-form">
+              <div class="form-row">
+                <label for="reviewerName">Name</label>
+                <input type="text" id="reviewerName" name="reviewerName" placeholder="Your name" required />
+              </div>
+              <div class="form-row">
+                <label for="rating">Rating</label>
+                <select id="rating" name="rating" required>
+                  <option value="">Choose rating</option>
+                  <option value="5">5 stars</option>
+                  <option value="4">4 stars</option>
+                  <option value="3">3 stars</option>
+                  <option value="2">2 stars</option>
+                  <option value="1">1 star</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="reviewMessage">Review</label>
+                <textarea id="reviewMessage" name="reviewMessage" rows="4" placeholder="Share your experience" required></textarea>
+              </div>
+              <div class="form-row">
+                <label for="reviewPhoto">Optional Photo Upload</label>
+                <input type="file" id="reviewPhoto" name="reviewPhoto" accept="image/*" />
+              </div>
+              <button type="submit" class="btn btn-primary">Submit Review</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="team section-block reveal-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Meet the Team</p>
+          <h2>Our team is growing with care</h2>
+          <p class="section-intro">Team photos and bios are coming soon. For now, meet the friendly faces behind the clean.</p>
+        </div>
+
+        <div class="team-grid">
+          <article class="team-card">
+            <div class="team-avatar">A</div>
+            <h3>Avery</h3>
+            <p>Lead cleaner with a keen eye for calm, comfortable spaces.</p>
+          </article>
+          <article class="team-card">
+            <div class="team-avatar">M</div>
+            <h3>Micah</h3>
+            <p>Detail specialist who makes kitchens and bathrooms gleam.</p>
+          </article>
+          <article class="team-card">
+            <div class="team-avatar">S</div>
+            <h3>Sky</h3>
+            <p>Organizing pro who helps bring order and peace to busy homes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="about" class="about section-block reveal-section">
       <div class="container about-grid">
         <div>
@@ -181,7 +268,7 @@
             <li><strong>Phone:</strong> <a href="tel:3865468371">386-546-8371</a></li>
             <li><strong>Email:</strong> <a href="mailto:hello@hippityhoppityclean.com">hello@hippityhoppityclean.com</a></li>
             <li><strong>Facebook:</strong> <a href="#">facebook.com/hippityhoppityclean</a></li>
-            <li><strong>Service Area:</strong> Serving Gainesville, Palatka, and surrounding areas</li>
+            <li><strong>Service Area:</strong> From Gainesville to St. Augustine, Palm Coast, and the areas in between.</li>
           </ul>
         </div>
 

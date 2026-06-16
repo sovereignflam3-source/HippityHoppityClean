@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const mainNav = document.querySelector(".main-nav");
   const navLinks = document.querySelectorAll(".main-nav a");
   const form = document.querySelector("#contactForm");
+  const reviewForm = document.querySelector("#reviewForm");
 
   // Toggle navigation menu on mobile.
   navToggle.addEventListener("click", function () {
@@ -33,6 +34,14 @@ document.addEventListener("DOMContentLoaded", function () {
     alert("Thank you! This form will be connected soon.");
     form.reset();
   });
+
+  if (reviewForm) {
+    reviewForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      alert("Thank you! Reviews will be connected soon.");
+      reviewForm.reset();
+    });
+  }
 
   // IntersectionObserver to reveal sections on scroll.
   const revealSections = document.querySelectorAll(".reveal-section");
