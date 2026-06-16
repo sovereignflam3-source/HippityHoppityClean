@@ -29,29 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    const status = document.querySelector("#contactStatus");
-    if (status) {
-      status.textContent = "Online submission is coming soon. Please contact us directly by email.";
-    }
-  });
-
   if (reviewForm) {
     reviewForm.addEventListener("submit", function (event) {
       event.preventDefault();
       alert("Thank you! Reviews will be connected soon.");
       reviewForm.reset();
-    });
-  }
-
-  if (careersForm) {
-    careersForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-      const status = document.querySelector("#careersStatus");
-      if (status) {
-        status.textContent = "Online submission is coming soon. Please contact us directly by email.";
-      }
     });
   }
 

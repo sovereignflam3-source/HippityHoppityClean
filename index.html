@@ -282,11 +282,12 @@
           <p class="section-intro">We're always looking for dependable, detail-oriented people who take pride in helping homes and rental properties shine.</p>
         </div>
 
-        <!-- Google Forms integration placeholder: careersForm -->
-        <form id="careersForm" class="careers-form">
+        <!-- Formspree integration: careersForm -->
+        <form id="careersForm" class="careers-form" action="https://formspree.io/f/xbdebady" method="POST">
+          <input type="hidden" name="_subject" value="Job Application - Hippity Hoppity" />
           <div class="form-row">
             <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" name="fullName" placeholder="Your full name" required />
+            <input type="text" id="fullName" name="full_name" placeholder="Your full name" required />
           </div>
           <div class="form-row">
             <label for="phone">Phone Number</label>
@@ -298,7 +299,7 @@
           </div>
           <div class="form-row">
             <label for="city">City / Area</label>
-            <input type="text" id="city" name="city" placeholder="Gainesville, Palm Coast, etc." required />
+            <input type="text" id="city" name="city_area" placeholder="Gainesville, Palm Coast, etc." required />
           </div>
           <div class="form-row">
             <label for="availability">Availability</label>
@@ -306,11 +307,11 @@
           </div>
           <div class="form-row">
             <label for="experience">Cleaning Experience</label>
-            <textarea id="experience" name="experience" rows="3" placeholder="Tell us about your cleaning experience" required></textarea>
+            <textarea id="experience" name="cleaning_experience" rows="3" placeholder="Tell us about your cleaning experience" required></textarea>
           </div>
           <div class="form-row">
             <label for="transportation">Reliable Transportation?</label>
-            <select id="transportation" name="transportation" required>
+            <select id="transportation" name="reliable_transportation" required>
               <option value="">Choose an option</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
@@ -344,8 +345,9 @@
           </ul>
         </div>
 
-        <!-- Google Forms integration placeholder: contactForm -->
-        <form id="contactForm" class="contact-form">
+        <!-- Formspree integration: contactForm -->
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/mykavdzq" method="POST">
+          <input type="hidden" name="_subject" value="Website Cleaning Request - Hippity Hoppity" />
           <div class="form-row">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your name" required />
@@ -360,7 +362,7 @@
           </div>
           <div class="form-row">
             <label for="service">Service Needed</label>
-            <input type="text" id="service" name="service" placeholder="Residential, Deep Clean, Turnover..." required />
+            <input type="text" id="service" name="service_needed" placeholder="Residential, Deep Clean, Turnover..." required />
           </div>
           <div class="form-row">
             <label for="message">Message</label>
