@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const service = document.querySelector("#service").value || "";
     const message = document.querySelector("#message").value || "";
     
-    const subject = encodeURIComponent("Contact Request from Hippity Hoppity Website");
+    const subject = encodeURIComponent("Website Cleaning Request - Hippity Hoppity");
     const body = encodeURIComponent(
       `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService Needed: ${service}\n\nMessage:\n${message}`
     );
@@ -67,9 +67,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const transportation = careersForm.querySelector("#transportation").value || "";
       const message = careersForm.querySelector("#careerMessage").value || "";
 
-      const subject = encodeURIComponent("Job Application - Hippity Hoppity Cleaning Service");
+      const subject = encodeURIComponent("Job Application - Hippity Hoppity");
       const body = encodeURIComponent(
-        `Full Name: ${fullName}\nPhone: ${phone}\nEmail: ${email}\nCity/Area: ${city}\nAvailability: ${availability}\nReliable Transportation: ${transportation}\n\nCleaning Experience:\n${experience}\n\nAdditional Message:\n${message}`
+        `Full Name: ${fullName}\nPhone: ${phone}\nEmail: ${email}\nCity / Area: ${city}\nAvailability: ${availability}\nCleaning Experience:\n${experience}\nReliable Transportation: ${transportation}\n\nMessage:\n${message}`
       );
 
       window.location.href = `mailto:hippityhoppitycleaningservice@gmail.com?subject=${subject}&body=${body}`;
