@@ -37,14 +37,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = document.querySelector("#email").value || "";
     const service = document.querySelector("#service").value || "";
     const message = document.querySelector("#message").value || "";
-    
+
     const subject = encodeURIComponent("Website Cleaning Request - Hippity Hoppity");
     const body = encodeURIComponent(
       `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService Needed: ${service}\n\nMessage:\n${message}`
     );
-    
-    window.location.href = `mailto:hippityhoppitycleaningservice@gmail.com?subject=${subject}&body=${body}`;
-    form.reset();
+
+    const mailtoLink = `mailto:hippityhoppitycleaningservice@gmail.com?subject=${subject}&body=${body}`;
+    console.log("Opening contact email:", mailtoLink);
+    window.location.href = mailtoLink;
   });
 
   if (reviewForm) {
@@ -72,8 +73,9 @@ document.addEventListener("DOMContentLoaded", function () {
         `Full Name: ${fullName}\nPhone: ${phone}\nEmail: ${email}\nCity / Area: ${city}\nAvailability: ${availability}\nCleaning Experience:\n${experience}\nReliable Transportation: ${transportation}\n\nMessage:\n${message}`
       );
 
-      window.location.href = `mailto:hippityhoppitycleaningservice@gmail.com?subject=${subject}&body=${body}`;
-      careersForm.reset();
+      const mailtoLink = `mailto:hippityhoppitycleaningservice@gmail.com?subject=${subject}&body=${body}`;
+      console.log("Opening careers email:", mailtoLink);
+      window.location.href = mailtoLink;
     });
   }
 
