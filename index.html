@@ -29,6 +29,7 @@
         <a href="#gallery">Gallery</a>
         <a href="#reviews">Reviews</a>
         <a href="#team">Team</a>
+        <a href="#careers">Careers</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -51,10 +52,7 @@
         </div>
 
         <div class="hero-image-card">
-          <video autoplay muted loop playsinline class="hero-image">
-            <source src="assets/images/logo.MOV" type="video/quicktime" />
-            <img src="assets/images/logo.JPG" alt="Hippity Hoppity Cleaning Service logo" class="hero-image" />
-          </video>
+          <img src="assets/images/logo.JPG" alt="Hippity Hoppity Cleaning Service logo" class="hero-image" />
           <div class="hero-image-label">Sparkle starts here</div>
         </div>
       </div>
@@ -270,6 +268,56 @@
           <h3>Progress, Not Perfection</h3>
           <p>We celebrate small wins, tidy spaces, and the relief of a home that feels easier to live in.</p>
         </aside>
+      </div>
+    </section>
+
+    <section id="careers" class="careers section-block reveal-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Join Our Team</p>
+          <h2>Join the Hippity Hoppity Team</h2>
+          <p class="section-intro">We're always looking for dependable, detail-oriented people who take pride in helping homes and rental properties shine.</p>
+        </div>
+
+        <form id="careersForm" class="careers-form">
+          <div class="form-row">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Your full name" required />
+          </div>
+          <div class="form-row">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="386-546-8371" required />
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-row">
+            <label for="city">City / Area</label>
+            <input type="text" id="city" name="city" placeholder="Gainesville, Palm Coast, etc." required />
+          </div>
+          <div class="form-row">
+            <label for="availability">Availability</label>
+            <input type="text" id="availability" name="availability" placeholder="e.g., Weekdays, Flexible, etc." required />
+          </div>
+          <div class="form-row">
+            <label for="experience">Cleaning Experience</label>
+            <textarea id="experience" name="experience" rows="3" placeholder="Tell us about your cleaning experience" required></textarea>
+          </div>
+          <div class="form-row">
+            <label for="transportation">Reliable Transportation?</label>
+            <select id="transportation" name="transportation" required>
+              <option value="">Choose an option</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Anything else you'd like us to know?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Application</button>
+        </form>
       </div>
     </section>
 

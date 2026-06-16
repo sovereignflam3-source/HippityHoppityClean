@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelectorAll(".main-nav a");
   const form = document.querySelector("#contactForm");
   const reviewForm = document.querySelector("#reviewForm");
+  const careersForm = document.querySelector("#careersForm");
 
   // Toggle navigation menu on mobile.
   navToggle.addEventListener("click", function () {
@@ -40,6 +41,14 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault();
       alert("Thank you! Reviews will be connected soon.");
       reviewForm.reset();
+    });
+  }
+
+  if (careersForm) {
+    careersForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      alert("Thank you! The application form will be connected soon.");
+      careersForm.reset();
     });
   }
 
