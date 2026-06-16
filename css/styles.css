@@ -664,13 +664,61 @@ textarea:focus {
 }
 
 .site-footer {
-  padding: 2rem 0 3rem;
+  padding: 2.5rem 0 3rem;
   color: var(--muted);
+  background: rgba(92, 45, 145, 0.04);
+  border-top: 1px solid rgba(92, 45, 145, 0.08);
 }
 
 .footer-inner {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  gap: 2rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.footer-section {
+  padding: 0;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  color: var(--purple);
+  margin: 0 0 0.5rem 0;
+}
+
+.footer-section h4 {
+  font-size: 0.95rem;
+  color: var(--purple);
+  margin: 1rem 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.footer-section p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.footer-section a {
+  color: var(--pink);
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-credit {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(92, 45, 145, 0.1);
 }
 
 .reveal-section {
@@ -767,5 +815,9 @@ textarea:focus {
 
   .btn {
     width: 100%;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
   }
 }

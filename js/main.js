@@ -29,10 +29,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Show a simple alert when the contact form is submitted.
+  // Open mailto with form data when the contact form is submitted.
   form.addEventListener("submit", function (event) {
     event.preventDefault();
-    alert("Thank you! This form will be connected soon.");
+    const name = document.querySelector("#name").value || "";
+    const phone = document.querySelector("#phone").value || "";
+    const email = document.querySelector("#email").value || "";
+    const service = document.querySelector("#service").value || "";
+    const message = document.querySelector("#message").value || "";
+    
+    const subject = encodeURIComponent("Contact Request from Hippity Hoppity Website");
+    const body = encodeURIComponent(
+      `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService Needed: ${service}\n\nMessage:\n${message}`
+    );
+    
+    window.location.href = `mailto:hippityhoppitycleaningservice@gmail.com?subject=${subject}&body=${body}`;
     form.reset();
   });
 
@@ -47,7 +58,21 @@ document.addEventListener("DOMContentLoaded", function () {
   if (careersForm) {
     careersForm.addEventListener("submit", function (event) {
       event.preventDefault();
-      alert("Thank you! The application form will be connected soon.");
+      const fullName = document.querySelector("#fullName").value || "";
+      const phone = document.querySelector("#phone").value || "";
+      const email = document.querySelector("#email").value || "";
+      const city = document.querySelector("#city").value || "";
+      const availability = document.querySelector("#availability").value || "";
+      const experience = document.querySelector("#experience").value || "";
+      const transportation = document.querySelector("#transportation").value || "";
+      const message = document.querySelector("#message").value || "";
+      
+      const subject = encodeURIComponent("Job Application - Hippity Hoppity Cleaning Service");
+      const body = encodeURIComponent(
+        `Full Name: ${fullName}\nPhone: ${phone}\nEmail: ${email}\nCity/Area: ${city}\nAvailability: ${availability}\nReliable Transportation: ${transportation}\n\nCleaning Experience:\n${experience}\n\nAdditional Message:\n${message}`
+      );
+      
+      window.location.href = `mailto:hippityhoppitycleaningservice@gmail.com?subject=${subject}&body=${body}`;
       careersForm.reset();
     });
   }
