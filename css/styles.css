@@ -970,28 +970,19 @@ textarea:focus {
   }
 
   .review-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1rem;
-    padding-bottom: 0.5rem;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .review-grid::-webkit-scrollbar {
-    height: 10px;
-  }
-
-  .review-grid::-webkit-scrollbar-thumb {
-    background: rgba(92, 45, 145, 0.25);
-    border-radius: 999px;
+    overflow: visible;
+    padding-bottom: 0;
   }
 
   .review-card {
-    min-width: 280px;
-    flex: 0 0 auto;
-    scroll-snap-align: start;
+    width: 100%;
+    max-width: 100%;
+    min-width: auto;
+    overflow-wrap: break-word;
+    white-space: normal;
   }
 }
 
