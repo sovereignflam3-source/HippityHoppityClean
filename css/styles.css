@@ -954,6 +954,45 @@ textarea:focus {
   .detail-grid {
     grid-template-columns: 1fr;
   }
+
+  .featured-transformation {
+    max-height: none;
+  }
+
+  .featured-image {
+    width: 100%;
+    height: auto;
+    min-height: 240px;
+  }
+
+  .detail-card {
+    min-height: 240px;
+  }
+
+  .review-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .review-grid::-webkit-scrollbar {
+    height: 10px;
+  }
+
+  .review-grid::-webkit-scrollbar-thumb {
+    background: rgba(92, 45, 145, 0.25);
+    border-radius: 999px;
+  }
+
+  .review-card {
+    min-width: 280px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
 }
 
 @media (max-width: 520px) {
