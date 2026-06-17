@@ -346,9 +346,9 @@
         </div>
 
         <!-- Formspree integration: contactForm -->
-        <form id="contactForm" class="contact-form" action="https://formspree.io/f/mbdebzdl" method="POST" enctype="multipart/form-data">
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/mbdebzdl" method="POST">
           <input type="hidden" name="_subject" value="Website Estimate Request - Hippity Hoppity" />
-          <p class="form-note">Estimates are based on the information provided and may be adjusted after photo review, walkthrough, or arrival depending on the condition and scope of the job. For the most accurate estimate, clients may be asked to submit photos or schedule a walkthrough.</p>
+          <p class="form-note">Estimates are based on the information provided and may be adjusted after photo review, walkthrough, or arrival depending on the condition and scope of the job. For the most accurate estimate, clients may be asked to email photos or schedule a walkthrough.</p>
           <div class="form-row">
             <label for="contactName">Name</label>
             <input type="text" id="contactName" name="name" placeholder="Your name" required />
@@ -397,9 +397,9 @@
             <label for="estimateMethod">Preferred Estimate Method</label>
             <select id="estimateMethod" name="estimate_method" required>
               <option value="">Choose preference</option>
-              <option value="General estimate from form/photos">General estimate from form/photos</option>
+              <option value="General estimate from submitted information">General estimate from submitted information</option>
               <option value="Schedule a walkthrough">Schedule a walkthrough</option>
-              <option value="Please contact me to decide">Please contact me to decide</option>
+              <option value="Please contact me to discuss options">Please contact me to discuss options</option>
             </select>
           </div>
           <div class="form-row">
@@ -412,8 +412,11 @@
             </select>
           </div>
           <div class="form-row">
-            <label for="photos">Photo Upload</label>
-            <input type="file" id="photos" name="photos" multiple accept="image/*" />
+            <h4>Photos & Walkthroughs</h4>
+            <p>Need to send photos of your property?</p>
+            <p>Please email photos directly to: <a href="mailto:hippityhoppitycleaningservice@gmail.com">hippityhoppitycleaningservice@gmail.com</a></p>
+            <p>Be sure to include your name and service address so we can match the photos to your estimate request.</p>
+            <p>For larger, heavily detailed, or unique projects, we may recommend scheduling a walkthrough to provide the most accurate estimate possible.</p>
           </div>
           <div class="form-row">
             <label for="estimateMessage">Message / Notes</label>
