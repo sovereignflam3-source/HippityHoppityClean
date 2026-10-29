@@ -429,54 +429,74 @@
     </section>
 
     <section id="careers" class="careers section-block reveal-section">
-      <div class="container">
-        <div class="section-header">
-          <p class="eyebrow">Join Our Team</p>
-          <h2>Join the Hippity Hoppity Team</h2>
-          <p class="section-intro">We're always looking for dependable, detail-oriented people who take pride in helping homes and rental properties shine.</p>
+      <div class="container careers-grid">
+        <div class="careers-intro">
+          <div class="section-header">
+            <p class="eyebrow">Join Our Team</p>
+            <h2>Join the Hippity Hoppity Team</h2>
+            <p class="section-intro">We're always looking for dependable, detail-oriented people who take pride in helping homes and rental properties shine.</p>
+          </div>
         </div>
 
         <!-- Formspree integration: careersForm -->
         <form id="careersForm" class="careers-form" action="https://formspree.io/f/xdavjwag" method="POST">
           <input type="hidden" name="_subject" value="Job Application - Hippity Hoppity" />
-          <div class="form-row">
-            <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" name="full_name" placeholder="Your full name" required />
+          <fieldset class="careers-form-section">
+            <legend>Your Details</legend>
+            <div class="careers-fields">
+              <div class="form-row">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="full_name" placeholder="Your full name" required />
+              </div>
+              <div class="form-row">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="386-546-8371" required />
+              </div>
+              <div class="form-row">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required />
+              </div>
+              <div class="form-row">
+                <label for="city">City / Area</label>
+                <input type="text" id="city" name="city_area" placeholder="Gainesville, Palm Coast, etc." required />
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="careers-form-section">
+            <legend>Your Availability &amp; Experience</legend>
+            <div class="careers-fields">
+              <div class="form-row">
+                <label for="availability">Availability</label>
+                <input type="text" id="availability" name="availability" placeholder="e.g., Weekdays, Flexible, etc." required />
+              </div>
+              <div class="form-row careers-field-wide">
+                <label for="experience">Cleaning Experience</label>
+                <textarea id="experience" name="cleaning_experience" rows="3" placeholder="Tell us about your cleaning experience" required></textarea>
+              </div>
+              <div class="form-row">
+                <label for="transportation">Reliable Transportation?</label>
+                <select id="transportation" name="reliable_transportation" required>
+                  <option value="">Choose an option</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="careers-form-section">
+            <legend>Additional Information</legend>
+            <div class="form-row">
+              <label for="careerMessage">Message</label>
+              <textarea id="careerMessage" name="message" rows="4" placeholder="Anything else you'd like us to know?"></textarea>
+            </div>
+          </fieldset>
+
+          <div class="careers-form-actions">
+            <button type="submit" class="btn btn-primary">Apply Now</button>
+            <p class="form-help">Having trouble submitting? Email us directly at: <a href="mailto:hippityhoppitycleaningservice@gmail.com">hippityhoppitycleaningservice@gmail.com</a></p>
           </div>
-          <div class="form-row">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="386-546-8371" required />
-          </div>
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" required />
-          </div>
-          <div class="form-row">
-            <label for="city">City / Area</label>
-            <input type="text" id="city" name="city_area" placeholder="Gainesville, Palm Coast, etc." required />
-          </div>
-          <div class="form-row">
-            <label for="availability">Availability</label>
-            <input type="text" id="availability" name="availability" placeholder="e.g., Weekdays, Flexible, etc." required />
-          </div>
-          <div class="form-row">
-            <label for="experience">Cleaning Experience</label>
-            <textarea id="experience" name="cleaning_experience" rows="3" placeholder="Tell us about your cleaning experience" required></textarea>
-          </div>
-          <div class="form-row">
-            <label for="transportation">Reliable Transportation?</label>
-            <select id="transportation" name="reliable_transportation" required>
-              <option value="">Choose an option</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <label for="careerMessage">Message</label>
-            <textarea id="careerMessage" name="message" rows="4" placeholder="Anything else you'd like us to know?"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Apply Now</button>
-          <p class="form-help">Having trouble submitting? Email us directly at: <a href="mailto:hippityhoppitycleaningservice@gmail.com">hippityhoppitycleaningservice@gmail.com</a></p>
         </form>
       </div>
     </section>

@@ -782,16 +782,121 @@ textarea {
   line-height: 1.7;
 }
 
+.careers-grid {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.72fr) minmax(0, 1.28fr);
+  align-items: start;
+  gap: clamp(1.75rem, 4vw, 3.25rem);
+}
+
+.careers-intro {
+  min-width: 0;
+  padding: 0.35rem 0 1.5rem 1.35rem;
+  border-left: 3px solid rgba(255, 77, 166, 0.55);
+}
+
+.careers-intro .section-header {
+  margin-bottom: 0;
+}
+
+.careers-intro .section-intro {
+  max-width: 38rem;
+  line-height: 1.75;
+}
+
 .careers-form {
-  background: linear-gradient(180deg, rgba(185, 240, 234, 0.15), rgba(255, 255, 255, 0.96));
+  display: grid;
+  gap: 0;
+  min-width: 0;
+  padding: clamp(1.35rem, 3vw, 2.25rem);
+  background: rgba(255, 255, 255, 0.98);
   border: 1px solid rgba(92, 45, 145, 0.08);
   border-radius: var(--radius);
-  padding: 2rem;
   box-shadow: var(--shadow);
-  max-width: 660px;
-  margin: 0 auto;
+}
+
+.careers-form-section {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.careers-form-section + .careers-form-section {
+  margin-top: 1.55rem;
+  padding-top: 1.55rem;
+  border-top: 1px solid rgba(92, 45, 145, 0.09);
+}
+
+.careers-form-section legend {
+  width: 100%;
+  margin: 0 0 1rem;
+  padding: 0;
+  color: var(--purple);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.careers-fields {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+}
+
+.careers-field-wide {
+  grid-column: 1 / -1;
+}
+
+.careers-form .form-row {
+  min-width: 0;
+}
+
+.careers-form label {
+  font-size: 0.9rem;
+}
+
+.careers-form input,
+.careers-form select {
+  min-height: 52px;
+}
+
+.careers-form select {
+  font: inherit;
+}
+
+.careers-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.careers-form input:focus-visible,
+.careers-form textarea:focus-visible,
+.careers-form select:focus-visible {
+  outline: none;
+  border-color: var(--purple);
+  box-shadow: 0 0 0 4px rgba(115, 194, 255, 0.18);
+}
+
+.careers-form-actions {
+  display: grid;
+  justify-items: start;
+  gap: 0.7rem;
+  margin-top: 1.55rem;
+}
+
+.careers-form-actions .form-help {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.careers-form-actions .form-help a {
+  color: var(--purple);
+  font-weight: 600;
+  overflow-wrap: anywhere;
 }
 
 .contact-form {
@@ -1259,6 +1364,7 @@ textarea:focus {
   .hero-grid,
   .about-grid,
   .contact-grid,
+  .careers-grid,
   .vacation-grid {
     grid-template-columns: 1fr;
   }
@@ -1276,6 +1382,10 @@ textarea:focus {
   }
 
   .contact-grid {
+    gap: 2rem;
+  }
+
+  .careers-grid {
     gap: 2rem;
   }
 }
@@ -1349,11 +1459,17 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 
-  .contact-field-wide {
+  .careers-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-field-wide,
+  .careers-field-wide {
     grid-column: auto;
   }
 
-  .contact-form {
+  .contact-form,
+  .careers-form {
     padding: 1.25rem;
   }
 
@@ -1362,7 +1478,9 @@ textarea:focus {
   }
 
   .contact-form-actions,
-  .contact-form-actions .btn {
+  .contact-form-actions .btn,
+  .careers-form-actions,
+  .careers-form-actions .btn {
     width: 100%;
   }
 
