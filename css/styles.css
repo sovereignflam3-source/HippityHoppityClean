@@ -667,44 +667,6 @@ textarea {
     padding: 0;
   }
 
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .team-card {
-    background: rgba(255, 255, 255, 0.96);
-    border-radius: var(--radius);
-    padding: 1.8rem;
-    box-shadow: var(--shadow);
-    border: 1px solid rgba(92, 45, 145, 0.08);
-    text-align: center;
-  }
-
-  .team-avatar {
-    width: 72px;
-    height: 72px;
-    font-size: 1.6rem;
-    color: var(--white);
-    background: linear-gradient(135deg, var(--blue), var(--purple));
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-
-  .team-card h3 {
-    margin: 0 0 0.5rem;
-  }
-
-  .team-card p {
-    margin: 0;
-    color: var(--muted);
-  }
-
 .contact-list {
   list-style: none;
   padding: 0;
