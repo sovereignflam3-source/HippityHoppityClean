@@ -162,31 +162,28 @@
         <div class="section-header">
           <p class="eyebrow">Client Feedback</p>
           <h2>What happy customers are saying</h2>
-          <p class="section-intro">Client reviews coming soon. In the meantime, here are a few notes from our early service visits.</p>
+          <p class="section-intro">Submitted reviews are shared only after customer consent and approval.</p>
         </div>
 
         <div class="review-grid">
-          <article class="review-card">
-            <p class="review-text">“The team arrived on time, worked carefully, and the place looked refreshed. We felt relaxed as soon as we walked in.”</p>
-            <p class="review-author">— Jamie, Gainesville</p>
-          </article>
-          <article class="review-card">
-            <p class="review-text">“Hippity Hoppity cleaned our rental quickly and left it guest-ready. Great care for the details and easy communication.”</p>
-            <p class="review-author">— Taylor, Palm Coast</p>
-          </article>
-          <article class="review-card">
-            <p class="review-text">“Friendly, professional, and exactly what we needed before our move. Our new home felt welcoming right away.”</p>
-            <p class="review-author">— Morgan, St. Augustine</p>
+          <article class="review-card review-empty-state">
+            <p class="review-text">Customer reviews will appear here soon.</p>
           </article>
         </div>
 
         <div class="review-wrapper">
           <div class="review-form-panel">
             <h3>Leave a Review</h3>
-            <form id="reviewForm" class="review-form">
+            <!-- Replace REVIEW_FORMSPREE_ENDPOINT with the dedicated Formspree endpoint before enabling submissions. -->
+            <form id="reviewForm" class="review-form" action="REVIEW_FORMSPREE_ENDPOINT" method="POST">
+              <input type="hidden" name="_subject" value="Website Customer Review - Hippity Hoppity" />
               <div class="form-row">
                 <label for="reviewerName">Name</label>
-                <input type="text" id="reviewerName" name="reviewerName" placeholder="Your name" required />
+                <input type="text" id="reviewerName" name="reviewer_name" placeholder="Your name" required />
+              </div>
+              <div class="form-row">
+                <label for="reviewerEmail">Email (not displayed publicly)</label>
+                <input type="email" id="reviewerEmail" name="reviewer_email" placeholder="you@example.com" required />
               </div>
               <div class="form-row">
                 <label for="rating">Rating</label>
@@ -201,11 +198,11 @@
               </div>
               <div class="form-row">
                 <label for="reviewMessage">Review</label>
-                <textarea id="reviewMessage" name="reviewMessage" rows="4" placeholder="Share your experience" required></textarea>
+                <textarea id="reviewMessage" name="review" rows="4" placeholder="Share your experience" required></textarea>
               </div>
-              <div class="form-row">
-                <label for="reviewPhoto">Optional Photo Upload</label>
-                <input type="file" id="reviewPhoto" name="reviewPhoto" accept="image/*" />
+              <div class="form-row review-consent">
+                <input type="checkbox" id="reviewConsent" name="publication_consent" value="yes" required />
+                <label for="reviewConsent">I give Hippity Hoppity Cleaning Service permission to display my review and first name on its website.</label>
               </div>
               <button type="submit" class="btn btn-primary">Submit Review</button>
             </form>

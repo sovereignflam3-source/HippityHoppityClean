@@ -505,6 +505,15 @@ textarea {
     border: 1px solid rgba(92, 45, 145, 0.08);
   }
 
+  .review-empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .review-empty-state .review-text {
+    margin: 0;
+  }
+
   .review-text {
     margin: 0 0 1.2rem;
     color: var(--text);
@@ -535,14 +544,26 @@ textarea {
     margin-top: 0;
   }
 
-  .review-form select,
-  .review-form input[type="file"] {
+  .review-form select {
     width: 100%;
     border: 1px solid rgba(92, 45, 145, 0.14);
     border-radius: 16px;
     padding: 0.95rem 1rem;
     background: #fbfbff;
     color: var(--text);
+  }
+
+  .review-consent {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    gap: 0.75rem;
+  }
+
+  .review-consent input[type="checkbox"] {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: 0.35rem 0 0;
+    padding: 0;
   }
 
   .team-grid {

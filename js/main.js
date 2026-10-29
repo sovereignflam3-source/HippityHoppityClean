@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const mainNav = document.querySelector(".main-nav");
   const navLinks = document.querySelectorAll(".main-nav a");
   const form = document.querySelector("#contactForm");
-  const reviewForm = document.querySelector("#reviewForm");
   const careersForm = document.querySelector("#careersForm");
 
   // Toggle navigation menu on mobile.
@@ -28,14 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-
-  if (reviewForm) {
-    reviewForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-      alert("Thank you! Reviews will be connected soon.");
-      reviewForm.reset();
-    });
-  }
 
   const modalTrigger = document.querySelector(".footer-credit-trigger");
   const modalOverlay = document.querySelector("#siteCreditModal");
