@@ -118,24 +118,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // IntersectionObserver to reveal sections on scroll.
   const revealSections = document.querySelectorAll(".reveal-section");
+  const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
-  if (window.IntersectionObserver) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.15,
-      }
-    );
-
-    revealSections.forEach((section) => observer.observe(section));
-  } else {
+  if (prefersReducedMotion || !window.IntersectionObserver) {
     revealSections.forEach((section) => section.classList.add("active"));
+  } else {
+    try {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.15,
+        }
+      );
+
+      revealSections.forEach((section) => observer.observe(section));
+      document.documentElement.classList.add("reveal-enabled");
+    } catch (error) {
+      document.documentElement.classList.remove("reveal-enabled");
+      revealSections.forEach((section) => section.classList.add("active"));
+    }
   }
 });

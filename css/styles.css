@@ -901,14 +901,31 @@ textarea:focus {
 }
 
 .reveal-section {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-enabled .reveal-section {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.reveal-section.active {
+.reveal-enabled .reveal-section.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal-enabled .reveal-section {
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
+  }
 }
 
 /* Responsive layout adjustments */
