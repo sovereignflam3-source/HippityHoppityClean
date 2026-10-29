@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   navToggle.addEventListener("click", function () {
     const isExpanded = mainNav.classList.toggle("open");
     navToggle.classList.toggle("open", isExpanded);
+    navToggle.setAttribute("aria-expanded", String(isExpanded));
   });
 
   // Close mobile menu after selecting a link.
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (mainNav.classList.contains("open")) {
         mainNav.classList.remove("open");
         navToggle.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
       }
 
       // Smooth scroll for older browsers.
