@@ -295,92 +295,135 @@
           <p class="contact-intro">Reach out to request an estimate, ask a quick question, or schedule a walkthrough.</p>
 
           <ul class="contact-list">
-            <li><strong>Phone:</strong> <a href="tel:3865468371">386-546-8371</a></li>
-            <li><strong>Email:</strong> <a href="mailto:hippityhoppitycleaningservice@gmail.com">hippityhoppitycleaningservice@gmail.com</a></li>
-            <li><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=100089550369204" target="_blank" rel="noopener noreferrer">facebook.com/hippityhoppityclean</a></li>
-            <li><strong>Service Area:</strong> From Gainesville to St. Augustine, Palm Coast, and the areas in between.</li>
+            <li>
+              <strong>Phone:</strong>
+              <a href="tel:3865468371">386-546-8371</a>
+            </li>
+            <li>
+              <strong>Email:</strong>
+              <a href="mailto:hippityhoppitycleaningservice@gmail.com">hippityhoppitycleaningservice@gmail.com</a>
+            </li>
+            <li>
+              <strong>Facebook:</strong>
+              <a href="https://www.facebook.com/profile.php?id=100089550369204" target="_blank" rel="noopener noreferrer">facebook.com/hippityhoppityclean</a>
+            </li>
+            <li>
+              <strong>Service Area:</strong>
+              <span>From Gainesville to St. Augustine, Palm Coast, and the areas in between.</span>
+            </li>
           </ul>
         </div>
 
         <!-- Formspree integration: contactForm -->
         <form id="contactForm" class="contact-form" action="https://formspree.io/f/mbdebzdl" method="POST">
           <input type="hidden" name="_subject" value="Website Estimate Request - Hippity Hoppity" />
-          <p class="form-note">Estimates are based on the information provided and may be adjusted after photo review, walkthrough, or arrival depending on the condition and scope of the job. For the most accurate estimate, clients may be asked to email photos or schedule a walkthrough.</p>
-          <div class="form-row">
-            <label for="contactName">Name</label>
-            <input type="text" id="contactName" name="name" placeholder="Your name" required />
+          <p class="form-note estimate-notice">Estimates are based on the information provided and may be adjusted after photo review, walkthrough, or arrival depending on the condition and scope of the job. For the most accurate estimate, clients may be asked to email photos or schedule a walkthrough.</p>
+
+          <fieldset class="contact-form-section">
+            <legend>Your Details</legend>
+            <div class="contact-fields">
+              <div class="form-row">
+                <label for="contactName">Name</label>
+                <input type="text" id="contactName" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-row">
+                <label for="contactPhone">Phone</label>
+                <input type="tel" id="contactPhone" name="phone" placeholder="386-546-8371" required />
+              </div>
+              <div class="form-row contact-field-wide">
+                <label for="contactEmail">Email</label>
+                <input type="email" id="contactEmail" name="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="contact-form-section">
+            <legend>Your Property</legend>
+            <div class="contact-fields">
+              <div class="form-row contact-field-wide">
+                <label for="serviceAddress">Service Address or City</label>
+                <input type="text" id="serviceAddress" name="service_address" placeholder="Your address or city" required />
+              </div>
+              <div class="form-row">
+                <label for="serviceType">Service Type</label>
+                <select id="serviceType" name="service_type" required>
+                  <option value="">Choose a service</option>
+                  <option value="Residential Cleaning">Residential Cleaning</option>
+                  <option value="Deep Cleaning">Deep Cleaning</option>
+                  <option value="Move-In / Move-Out">Move-In / Move-Out</option>
+                  <option value="Airbnb / Vacation Rental">Airbnb / Vacation Rental</option>
+                  <option value="Commercial Cleaning">Commercial Cleaning</option>
+                  <option value="Organization / Decluttering">Organization / Decluttering</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="squareFootage">Approximate Square Footage</label>
+                <input type="text" id="squareFootage" name="square_footage" placeholder="e.g. 1200" />
+              </div>
+              <div class="form-row contact-field-wide">
+                <label for="propertyCondition">Home / Property Condition</label>
+                <select id="propertyCondition" name="property_condition" required>
+                  <option value="">Choose condition</option>
+                  <option value="Light maintenance clean">Light maintenance clean</option>
+                  <option value="Average lived-in">Average lived-in</option>
+                  <option value="Heavy cleaning needed">Heavy cleaning needed</option>
+                  <option value="Move-out / neglected">Move-out / neglected</option>
+                  <option value="Unsure">Unsure</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="contact-form-section">
+            <legend>Your Preferences</legend>
+            <div class="contact-fields">
+              <div class="form-row">
+                <label for="estimateMethod">Preferred Estimate Method</label>
+                <select id="estimateMethod" name="estimate_method" required>
+                  <option value="">Choose preference</option>
+                  <option value="General estimate from submitted information">General estimate from submitted information</option>
+                  <option value="Schedule a walkthrough">Schedule a walkthrough</option>
+                  <option value="Please contact me to discuss options">Please contact me to discuss options</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="preferredContact">Preferred Contact Method</label>
+                <select id="preferredContact" name="preferred_contact" required>
+                  <option value="">Choose contact method</option>
+                  <option value="Phone call">Phone call</option>
+                  <option value="Text message">Text message</option>
+                  <option value="Email">Email</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="contact-form-section">
+            <legend>Additional Details</legend>
+            <div class="photos-callout">
+              <span class="photos-callout-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M4 7.5h3l1.5-2h7l1.5 2h3v11H4z" />
+                  <circle cx="12" cy="13" r="3.25" />
+                </svg>
+              </span>
+              <div>
+                <h4>Photos & Walkthroughs</h4>
+                <p>Email photos directly to <a href="mailto:hippityhoppitycleaningservice@gmail.com">hippityhoppitycleaningservice@gmail.com</a>. Include your name and service address so we can match them to your estimate request.</p>
+                <p>For larger, heavily detailed, or unique projects, we may recommend scheduling a walkthrough to provide the most accurate estimate possible.</p>
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="estimateMessage">Message / Notes</label>
+              <textarea id="estimateMessage" name="message" rows="4" placeholder="Tell us more about your space"></textarea>
+            </div>
+          </fieldset>
+
+          <div class="contact-form-actions">
+            <button type="submit" class="btn btn-primary">Request an Estimate</button>
+            <p class="form-help">Having trouble submitting? Email us directly at: <a href="mailto:hippityhoppitycleaningservice@gmail.com">hippityhoppitycleaningservice@gmail.com</a></p>
           </div>
-          <div class="form-row">
-            <label for="contactPhone">Phone</label>
-            <input type="tel" id="contactPhone" name="phone" placeholder="386-546-8371" required />
-          </div>
-          <div class="form-row">
-            <label for="contactEmail">Email</label>
-            <input type="email" id="contactEmail" name="email" placeholder="you@example.com" required />
-          </div>
-          <div class="form-row">
-            <label for="serviceAddress">Service Address or City</label>
-            <input type="text" id="serviceAddress" name="service_address" placeholder="Your address or city" required />
-          </div>
-          <div class="form-row">
-            <label for="serviceType">Service Type</label>
-            <select id="serviceType" name="service_type" required>
-              <option value="">Choose a service</option>
-              <option value="Residential Cleaning">Residential Cleaning</option>
-              <option value="Deep Cleaning">Deep Cleaning</option>
-              <option value="Move-In / Move-Out">Move-In / Move-Out</option>
-              <option value="Airbnb / Vacation Rental">Airbnb / Vacation Rental</option>
-              <option value="Commercial Cleaning">Commercial Cleaning</option>
-              <option value="Organization / Decluttering">Organization / Decluttering</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <label for="squareFootage">Approximate Square Footage</label>
-            <input type="text" id="squareFootage" name="square_footage" placeholder="e.g. 1200" />
-          </div>
-          <div class="form-row">
-            <label for="propertyCondition">Home / Property Condition</label>
-            <select id="propertyCondition" name="property_condition" required>
-              <option value="">Choose condition</option>
-              <option value="Light maintenance clean">Light maintenance clean</option>
-              <option value="Average lived-in">Average lived-in</option>
-              <option value="Heavy cleaning needed">Heavy cleaning needed</option>
-              <option value="Move-out / neglected">Move-out / neglected</option>
-              <option value="Unsure">Unsure</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <label for="estimateMethod">Preferred Estimate Method</label>
-            <select id="estimateMethod" name="estimate_method" required>
-              <option value="">Choose preference</option>
-              <option value="General estimate from submitted information">General estimate from submitted information</option>
-              <option value="Schedule a walkthrough">Schedule a walkthrough</option>
-              <option value="Please contact me to discuss options">Please contact me to discuss options</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <label for="preferredContact">Preferred Contact Method</label>
-            <select id="preferredContact" name="preferred_contact" required>
-              <option value="">Choose contact method</option>
-              <option value="Phone call">Phone call</option>
-              <option value="Text message">Text message</option>
-              <option value="Email">Email</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <h4>Photos & Walkthroughs</h4>
-            <p>Need to send photos of your property?</p>
-            <p>Please email photos directly to: <a href="mailto:hippityhoppitycleaningservice@gmail.com">hippityhoppitycleaningservice@gmail.com</a></p>
-            <p>Be sure to include your name and service address so we can match the photos to your estimate request.</p>
-            <p>For larger, heavily detailed, or unique projects, we may recommend scheduling a walkthrough to provide the most accurate estimate possible.</p>
-          </div>
-          <div class="form-row">
-            <label for="estimateMessage">Message / Notes</label>
-            <textarea id="estimateMessage" name="message" rows="4" placeholder="Tell us more about your space"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Request an Estimate</button>
-          <p class="form-help">Having trouble submitting? Email us directly at: <a href="mailto:hippityhoppitycleaningservice@gmail.com">hippityhoppitycleaningservice@gmail.com</a></p>
         </form>
       </div>
     </section>

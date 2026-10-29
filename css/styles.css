@@ -728,12 +728,58 @@ textarea {
   padding: 0;
   margin: 1.5rem 0 0;
   display: grid;
-  gap: 0.85rem;
+  gap: 0;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(92, 45, 145, 0.1);
+  border-radius: 22px;
 }
 
 .contact-list li {
-  font-size: 1rem;
+  display: grid;
+  gap: 0.2rem;
+  padding: 1rem 1.1rem;
+  font-size: 0.96rem;
   color: var(--muted);
+}
+
+.contact-list li + li {
+  border-top: 1px solid rgba(92, 45, 145, 0.08);
+}
+
+.contact-list strong {
+  color: var(--purple);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contact-list a {
+  color: var(--text);
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 77, 166, 0.4);
+  text-underline-offset: 0.2em;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.72fr) minmax(0, 1.28fr);
+  align-items: start;
+  gap: clamp(1.75rem, 4vw, 3.25rem);
+}
+
+.contact-details {
+  min-width: 0;
+}
+
+.contact-details .section-header {
+  margin-bottom: 1rem;
+}
+
+.contact-intro {
+  margin: 0;
+  line-height: 1.7;
 }
 
 .careers-form {
@@ -750,11 +796,156 @@ textarea {
 
 .contact-form {
   display: grid;
-  gap: 1rem;
-  padding: 1.2rem 1.3rem 1.3rem;
+  gap: 0;
+  min-width: 0;
+  padding: clamp(1.35rem, 3vw, 2.25rem);
   background: rgba(255, 255, 255, 0.98);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+}
+
+.estimate-notice {
+  margin: 0 0 1.5rem;
+  padding: 0.9rem 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  background: rgba(126, 217, 233, 0.11);
+  border-left: 3px solid rgba(126, 217, 233, 0.78);
+  border-radius: 0 14px 14px 0;
+}
+
+.contact-form-section {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.contact-form-section + .contact-form-section {
+  margin-top: 1.55rem;
+  padding-top: 1.55rem;
+  border-top: 1px solid rgba(92, 45, 145, 0.09);
+}
+
+.contact-form-section legend {
+  width: 100%;
+  margin: 0 0 1rem;
+  padding: 0;
+  color: var(--purple);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contact-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.contact-field-wide {
+  grid-column: 1 / -1;
+}
+
+.contact-form .form-row {
+  min-width: 0;
+}
+
+.contact-form label {
+  font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form select {
+  min-height: 52px;
+}
+
+.contact-form select {
+  font: inherit;
+}
+
+.contact-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible,
+.contact-form select:focus-visible {
+  outline: none;
+  border-color: var(--purple);
+  box-shadow: 0 0 0 4px rgba(115, 194, 255, 0.18);
+}
+
+.photos-callout {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgba(238, 234, 253, 0.72);
+  border: 1px solid rgba(92, 45, 145, 0.1);
+  border-radius: 18px;
+}
+
+.photos-callout-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  color: var(--purple);
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 12px;
+}
+
+.photos-callout-icon svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.photos-callout h4 {
+  margin: 0 0 0.45rem;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.photos-callout p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.photos-callout p + p {
+  margin-top: 0.45rem;
+}
+
+.photos-callout a,
+.contact-form .form-help a {
+  color: var(--purple);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.contact-form-actions {
+  display: grid;
+  justify-items: start;
+  gap: 0.7rem;
+  margin-top: 1.55rem;
+}
+
+.contact-form-actions .form-help {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
 }
 
 .form-row {
@@ -1083,6 +1274,10 @@ textarea:focus {
   .about-grid {
     gap: 2.25rem;
   }
+
+  .contact-grid {
+    gap: 2rem;
+  }
 }
 
 @media (max-width: 760px) {
@@ -1148,6 +1343,27 @@ textarea:focus {
 
   .about-philosophy {
     padding: 1rem 0 1rem 1.35rem;
+  }
+
+  .contact-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-field-wide {
+    grid-column: auto;
+  }
+
+  .contact-form {
+    padding: 1.25rem;
+  }
+
+  .photos-callout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-actions,
+  .contact-form-actions .btn {
+    width: 100%;
   }
 
   .review-grid {
