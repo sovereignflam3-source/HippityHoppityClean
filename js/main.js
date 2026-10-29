@@ -34,19 +34,34 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalOverlay = document.querySelector("#siteCreditModal");
   const modalCard = modalOverlay?.querySelector(".modal-card");
   const modalClose = modalOverlay?.querySelector(".modal-close");
+  let previouslyFocusedElement = null;
+
+  function getModalFocusableElements() {
+    if (!modalCard) return [];
+
+    return Array.from(
+      modalCard.querySelectorAll(
+        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )
+    );
+  }
 
   function openModal() {
-    if (!modalOverlay) return;
+    if (!modalOverlay || modalOverlay.classList.contains("active")) return;
+    previouslyFocusedElement = document.activeElement;
     modalOverlay.classList.add("active");
     modalOverlay.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
+    (modalClose || modalCard)?.focus();
   }
 
   function closeModal() {
-    if (!modalOverlay) return;
+    if (!modalOverlay || !modalOverlay.classList.contains("active")) return;
     modalOverlay.classList.remove("active");
     modalOverlay.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+    previouslyFocusedElement?.focus();
+    previouslyFocusedElement = null;
   }
 
   if (modalTrigger) {
@@ -71,8 +86,33 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && modalOverlay?.classList.contains("active")) {
+    if (!modalOverlay?.classList.contains("active")) return;
+
+    if (event.key === "Escape") {
+      event.preventDefault();
       closeModal();
+      return;
+    }
+
+    if (event.key !== "Tab") return;
+
+    const focusableElements = getModalFocusableElements();
+    if (focusableElements.length === 0) {
+      event.preventDefault();
+      modalCard?.focus();
+      return;
+    }
+
+    const firstFocusableElement = focusableElements[0];
+    const lastFocusableElement = focusableElements[focusableElements.length - 1];
+    const focusIsOutsideModal = !modalCard?.contains(document.activeElement);
+
+    if (event.shiftKey && (document.activeElement === firstFocusableElement || focusIsOutsideModal)) {
+      event.preventDefault();
+      lastFocusableElement.focus();
+    } else if (!event.shiftKey && (document.activeElement === lastFocusableElement || focusIsOutsideModal)) {
+      event.preventDefault();
+      firstFocusableElement.focus();
     }
   });
 
